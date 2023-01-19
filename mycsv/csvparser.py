@@ -8,5 +8,10 @@ def read_row(file):
 
 
 def __parse_row(next_line):
-    return None
-
+    # print(f"{next_line}")
+    nextline = next_line.replace("\n", "")
+    parsed_list = nextline.split(",")
+    clean_list = []
+    for key, value in enumerate(parsed_list):
+        clean_list.append(value.replace('\"', ""))
+    return clean_list
